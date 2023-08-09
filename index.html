@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="preloader"></div>
+    <div class="image-container">
+        
+        <img src="https://www.dgct.ac.in/imgback/dgctlogo.jpg" alt="Image 1">
+        <img src="https://www.dgct.ac.in/imgback/award1.jpg" alt="Image 2">
+        <img src="https://www.dgct.ac.in/imgback/accredition/placement.jpg" alt="Image 3">
+    </div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#admission">Admission</a>
+        <a href="#academics">Academics</a>
+        <a href="#placement">Placement Training</a>
+        <a href="#development">360 Development</a>
+        <a href="#iqac">IQAC</a>
+        <a href="#research">Research &amp; Development</a>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel">
+          <img src="https://www.dgct.ac.in/imgback/banner/pals.jpg" alt="Image 1">
+          <img src="https://www.dgct.ac.in/imgback/banner/HR-Conclave.jpg" alt="Image 2">
+          <img src="https://www.dgct.ac.in/imgback/banner/graduationday.jpg" alt="Image 3">
+        </div>
+    </div>
+    <div class="slide-container">
+      <div class="slide">
+        <h2>Testimony</h2>
+        <img src="https://www.dgct.ac.in/events/dgct-prize2023.jpg" alt="Testimony 1" style="height:500px;">
+        <img src="https://www.dgct.ac.in/events/7th-graduation-day.jpg" alt="Testimony 2" style="display: none;height:500px;">
+      </div>
+      <div class="slide">
+        <h2>DGCT Events</h2>
+        <img src="https://www.dgct.ac.in/events/naan-mudhalvan.png" alt="Event 1" style="display: none;height:500px;">
+        <img src="https://www.dgct.ac.in/posters/dgctadmission-2023.jpg" alt="Event 2" style="display: none;height:500px;">
+      </div>
+      <div class="slide">
+        <h2>DGCT Tech Talks</h2>
+        <img src="https://www.dgct.ac.in/events/placement-day-2023.jpg" alt="Tech Talk 1" style="height:500px;">
+        <img src="https://www.dgct.ac.in/events/achievers-day-2023.jpg" alt="Tech Talk 2" style="display: none;">
+      </div>
+    </div>
+    <div class="container">
+      <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione magnam, repudiandae porro minima accusantium quisquam unde totam quis sapiente eveniet, modi tempora inventore reprehenderit id natus nobis, sint voluptates labore.</div>
+      <div class="box"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d124977.5393623116!2d78.056168!3d11.796835!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf88da5321051%3A0x1100220616512859!2sDhirajlal%20Gandhi%20College%20of%20Technology!5e0!3m2!1sen!2sus!4v1691558587124!5m2!1sen!2sus" width="400" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aspernatur voluptate. Consequuntur et perspiciatis culpa enim neque sequi aliquam corrupti totam, voluptates non rerum quas sit accusamus dicta in excepturi.</div>
+    </div>
+    <script>
+        const carousel = document.querySelector(".carousel");
+let currentIndex = 0;
+
+function slideToIndex(index) {
+  const offset = -index * 100; // 100% for each slide
+  carousel.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % 3; // Assuming you have 3 images
+  slideToIndex(currentIndex);
+}
+
+setInterval(nextSlide, 5000); // Automatic slide every 5 seconds
+setTimeout(function() {
+  var preloader = document.querySelector('#preloader');
+  preloader.style.display = 'none';
+}, 3000);
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach(slide => {
+    const images = slide.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].style.display = 'none';
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.display = 'block';
+    }
+
+    setInterval(showNextImage, 3000); // Change image every 3 seconds
+  });
+});
+    </script>
+</body>
+</html>
